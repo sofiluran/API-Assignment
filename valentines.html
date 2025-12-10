@@ -1,22 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="styles/global.css">
 </head>
+
 <body>
   <header class="header">
-    <h1 class="header-title">OUR WEBSITE</h1>
+    <nav class="menu">
+      <a href="index.html" class="menu-item">HOME</a>
+      <a href="christmas.html" class="menu-item">CHRISTMAS</a>
+      <a href="index.html" class="header-item">
+        <h1 class="header-title">Our Holiday Website</h1>
+      </a>
+      <a href="halloween.html" class="menu-item">HALLOWEEN</a>
+      <a href="valentines.html" class="menu-item active">VALENTINES DAY</a>
+    </nav>
   </header>
-  <nav>
-    <a href="index.html" class="menu-item">HOME</a>
-    <a href="christmas.html" class="menu-item">CHRISTMAS</a>
-    <a href="halloween.html" class="menu-item">HALLOWEEN</a>
-    <a href="valentines.html" class="menu-item active">VALENTINES DAY</a>
-  </nav>
-  
-<footer class="footer">&copy;footer</footer>
+
+  <div class="hero-image-container">
+    <img class="hero-image" src="./images/christmas-hq (1).avif" alt="logo" height="150px" width="250px">
+  </div>
+
+  <div class="user-input">
+    <button id="button-random">Randomize a Movie</button>
+    <h3 class="user-input-title">OR</h3>
+    <input id="search-input" placeholder="Search for a movie title..." />
+  </div>
+
+  <main class="main">
+    <div class="main-content"></div>
+  </main>
+
+  <footer class="footer">&copy;Group CSS</footer>
 </body>
+
 </html>
