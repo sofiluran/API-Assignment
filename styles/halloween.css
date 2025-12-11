@@ -1,0 +1,35 @@
+.menu {
+  background-color: #5d0249;
+
+  a {
+    color: #ff8500
+  }
+}
+
+.header-title {
+  color: #ff8500;
+}
+
+.footer {
+  background-color: #5d0249
+}
+
+.user-input {
+  background-color: #5d0249
+}
+
+.user-input-title {
+  color: #ff9020;
+}
+
+body {
+  background-color: #5d0249
+}
+
+#button-random {
+  background-color: #ff9020
+}
+
+#search-input {
+  border: solid #ff9020;
+}
