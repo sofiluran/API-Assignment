@@ -3,20 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="styles/global.css">
+  <title>Christmas Movies Top50</title>
+  <link rel="stylesheet" href="./styles/global.css">
+  <link rel="stylesheet" href="./styles/christmas.css">
+  <link rel="stylesheet" href="./styles/typography.css">
 </head>
 <body>
   <header class="header">
-    <h1 class="header-title">OUR WEBSITE</h1>
+    <nav class="menu">
+      <a href="index.html" class="menu-item">HOME</a>
+      <a href="christmas.html" class="menu-item">CHRISTMAS</a>
+      <a href="index.html" class="header-item">
+        <h1 class="header-title">Top50 Christmas Movies</h1>
+      </a>
+      <a href="halloween.html" class="menu-item">HALLOWEEN</a>
+      <a href="valentines.html" class="menu-item active">VALENTINES DAY</a>
+    </nav>
   </header>
-    <nav>
-    <a href="index.html" class="menu-item">HOME</a>
-    <a href="christmas.html" class="menu-item active">CHRISTMAS</a>
-    <a href="halloween.html" class="menu-item">HALLOWEEN</a>
-    <a href="valentines.html" class="menu-item">VALENTINES DAY</a>
-  </nav>
-  
-<footer class="footer">&copy;footer</footer>
+  <div class="hero-image-container">
+    <img class="hero-image" src="./images/christmas.avif" alt="christmas image" height="150px" width="250px">
+  </div>
+  <div class="christmas-introduction">
+    <h1 class="christmas-introduction-title">Top 50 Christmas Movies You Can&apos;t Miss</h1>
+    <p class="christmas-introduction-content">Christmas is approaching, and what better way to get into the holiday spirit than by watching a good Christmas movie? Our team has curated a list of the top 50 Christmas films to watch, packed with heartwarming classics, modern favorites, and hilarious comedies. Whether you&apos;re planning a cozy night by the fire, a festive family gathering, or a romantic holiday evening, there&apos;s something here for everyone. Grab your hot cocoa, snuggle up under a blanket, and let our selection bring cheer, laughter, and a touch of holiday magic to your festive season.</p>
+
+  </div>
+  <div class="user-input">
+    <button id="button-random">What Should I Watch?</button>
+    <h3 class="user-input-title">OR</h3>
+    <input id="search-input" placeholder="Search if a movie is on our Top 50 list...">
+  </div>
+  <div class="result"></div>
+  <main class="main">
+    <div class="main-content">
+      <section class="movie-grid-container">
+        <div class="movie-image-container">
+            <img src="./images/christmas_placeholder.jpg" alt="" height="500px" width="auto">
+        </div>
+        <div class="movie-title"><h1>Love Actually</h1></div>
+        <div class="movie-year">
+          <h2>Year</h2>
+          <p>2003</p>
+        </div>
+        <div class="movie-rating">
+          <h2>IMDB rating</h2>
+          <p>7.5</p>
+        </div>
+        <div class="movie-runtime">
+          <h2>Runtime</h2>
+          <p>135</p>
+        </div>
+        <div class="movie-mpa">
+          <h2>MPA rating</h2>
+          <p>R</p>
+        </div>
+        <div class="movie-description">
+            <p>Follows the lives of eight very different couples in dealing with their love lives in various loosely interrelated tales all set during a frantic month before Christmas in London, England.</p>
+        </div>
+        <div class="read-more">
+            <a href="https://www.imdb.com/title/tt0314331/?ref_=fn_t_1" class="imdb-button">Read more on IMDB</a>
+        </div>
+      </section>
+    </div>
+  </main>  
+<footer class="footer">&copy;CSS</footer>
 </body>
 </html>
