@@ -5,10 +5,6 @@
   --color-primary: #ffffff;
 }
 
-.header {
-  border-bottom: solid lightgrey;
-}
-
 body {
   background-color: var(--background-secondary);
 }
@@ -18,7 +14,7 @@ body {
 }
 
 .menu {
-  background-color: var(--background-secondary);
+  background-color: var(--background-tertiary);
 
   a {
     color: var(--color-primary);
@@ -27,7 +23,6 @@ body {
 
 .user-input {
   background-color: var(--background-secondary);
-  border: solid var(--background-primary);
 }
 
 .user-input-title {
