@@ -5,70 +5,72 @@
   --color-primary: #ffffff;
 }
 
-.main {
-  background-color: #fdb1b5;
-}
-
-.menu {
-  background-color: var(--background-tertiary);
-
-  a {
-    color: var(--color-primary)
-  }
-}
-
-.header-title {
-  color: var(--color-primary)
-}
-
-.footer {
-  background-color: var(--background-tertiary)
-}
-
-.user-input {
-  background-color: var(--background-secondary)
-}
-
-.user-input-title {
-  color: var(--background-tertiary)
+.header {
+  border-bottom: solid lightgrey;
 }
 
 body {
-  background-color: var(--background-secondary)
+  background-color: var(--background-secondary);
+}
+
+.header-title {
+  color: var(--color-primary);
+}
+
+.menu {
+  background-color: var(--background-secondary);
+
+  a {
+    color: var(--color-primary);
+  }
+}
+
+.user-input {
+  background-color: var(--background-secondary);
+  border: solid var(--background-primary);
+}
+
+.user-input-title {
+  color: var(--background-tertiary);
 }
 
 #button-random {
-  background-color: var(--background-tertiary)
+  background-color: var(--background-tertiary);
 }
 
 #search-input {
   border: solid var(--background-tertiary);
 }
 
-.movie {
-  display: grid;
-  grid-template-columns: 30% auto auto auto auto;
-  background-color: var(--background-secondary);
-  justify-content: center;
+.main {
+  background-color: #fdb1b5;
 }
 
-.movie img {
-  grid-row: 1 / span 3;
+.movie-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+  color: var(--color-primary);
+  padding-left: 100px;
 }
 
-.movie-title {
-  grid-column: 2 / span 4;
+h2 {
   text-align: center;
 }
 
-.movie-plot {
-  grid-column: 2 / span 4;
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 100px 50px 100px;
 }
 
-.info {
-  padding: 16px;
-  margin: 16px;
+.movie-stats {
+  display: flex;
+  justify-content: space-between;
   text-align: center;
+}
+
+.footer {
   background-color: var(--background-secondary);
-  color: var(--color-primary)
+  border-top: solid var(--background-primary);
 }

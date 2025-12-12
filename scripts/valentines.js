@@ -1,7 +1,7 @@
 const apiKey = "d2db7f69"
 const apiUrl = "https://www.omdbapi.com/"
 const searchInput = document.getElementById("search-input")
-const result = document.querySelector(".result")
+const result = document.querySelector(".main")
 
 
 const searchMovie = async () => {
@@ -48,19 +48,23 @@ const displayResult = (movie) => {
   const imdbRating = movie.imdbRating
 
   const movieDiv = document.createElement("div")
-  movieDiv.classList.add("movie")
+  movieDiv.classList.add("movie-container")
 
   movieDiv.innerHTML = `
   
   ${poster !== "N/A" ? `<img src="${poster}" alt="${title} poster">`
       : `<div></div>`
     } 
-    <h2 class="movie-title info"> ${title} </h2>
-    <h3 class="info"> ${year} </h3>
-    <h3 class="info"> Imdb Rating: ${imdbRating} </h3>
-    <h3 class="info"> Runtime: ${runtime} </h3>
-    <h3 class="info"> ${rating} </h3>
-    <h3 class="movie-plot info"> ${plot} </h3>
+    <div class="movie-info">
+      <h2> <b>${title}</b> </h2>
+      <div class="movie-stats">
+        <h3> <b>Year</b> <br><br> ${year} </h3>
+        <h3> <b>Imdb Rating</b> <br><br> ${imdbRating} </h3>
+        <h3> <b>Runtime</b> <br><br> ${runtime} </h3>
+        <h3> <b>MPA</b> <br><br> ${rating} </h3>
+      </div>
+      <h3> ${plot} </h3>
+    </div>
   `
   result.appendChild(movieDiv)
 }
