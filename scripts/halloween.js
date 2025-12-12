@@ -42,15 +42,25 @@ const displayResult = (movie) => {
   const title = movie.Title
   const year = movie.Year
   const poster = movie.Poster
+  const runtime = movie.Runtime
+  const rating = movie.Rated
+  const plot = movie.Plot
+  const imdbRating = movie.imdbRating
 
   const movieDiv = document.createElement("div")
   movieDiv.classList.add("movie")
 
   movieDiv.innerHTML = `
-  <h2> ${title} (${year}) </h2>
+  
   ${poster !== "N/A" ? `<img src="${poster}" alt="${title} poster">`
       : `<div></div>`
     } 
+    <h2 class="movie-title info"> ${title} </h2>
+    <h3 class="info"> ${year} </h3>
+    <h3 class="info"> Imdb Rating: ${imdbRating} </h3>
+    <h3 class="info"> Runtime: ${runtime} </h3>
+    <h3 class="info"> ${rating} </h3>
+    <h3 class="movie-plot info"> ${plot} </h3>
   `
   result.appendChild(movieDiv)
 }

@@ -33,3 +33,31 @@ body {
 #search-input {
   border: solid #ff9020;
 }
+
+.movie {
+ display: grid;
+ grid-template-columns: 30% auto auto auto auto;
+ background-color: #5d0249;;
+ justify-content: center;
+}
+
+.movie img {
+grid-row: 1 / span 3;
+}
+
+.movie-title {
+  grid-column: 2 / span 4;
+  text-align: center;
+}
+
+.movie-plot {
+  grid-column: 2 / span 4;
+}
+
+.info {
+  padding: 16px;
+  margin: 16px;
+  text-align: center;
+  background-color: #7d0463;
+  color: #ff8500;
+}
