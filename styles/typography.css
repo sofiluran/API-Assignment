@@ -17,6 +17,12 @@
 }
 
 @font-face {
+  font-family: HennyPenny;
+  src: url("../fonts/HennyPenny-Regular.woff2") format("woff2"),
+      url("../fonts/HennyPenny-Regular.woff") format("woff");
+}
+
+@font-face {
     font-family: 'Cormorant Upright';
     src: url('../fonts/CormorantUpright-Medium.woff2') format('woff2'),
         url('../fonts/CormorantUpright-Medium.woff') format('woff');
