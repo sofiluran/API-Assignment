@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="./styles/global.css">
   <link rel="stylesheet" href="./styles/christmas.css">
   <link rel="stylesheet" href="./styles/typography.css">
+  <script src="./scripts/christmas.js" defer></script>
 </head>
 <body>
   <header class="header">
@@ -29,39 +30,39 @@
 
   </div>
   <div class="user-input">
-    <button id="button-random">What Should I Watch?</button>
-    <h3 class="user-input-title">OR</h3>
-    <input id="search-input" placeholder="Search if a movie is on our Top 50 list...">
+    <button class="button-random">What Should I Watch?</button>
+    <p class="user-input-text">OR</p>
+    <input class="search-input" placeholder="Search if a movie is on our Top 50 list...">
   </div>
   <div class="result"></div>
   <main class="main">
     <div class="main-content">
-      <section class="movie-grid-container">
+      <section class="movie-grid-container">§
         <div class="movie-image-container">
-            <img src="./images/christmas_placeholder.jpg" alt="" height="500px" width="auto">
+            <img src="" alt="" height="500px" width="auto">
         </div>
-        <div class="movie-title"><h1>Love Actually</h1></div>
-        <div class="movie-year">
+        <div class="movie-title-container"><h1 class="movie-title"></h1></div>
+        <div class="movie-year-container">
           <h2>Year</h2>
-          <p>2003</p>
+          <p class="movie-year"></p>
         </div>
-        <div class="movie-rating">
+        <div class="movie-rating-container">
           <h2>IMDB rating</h2>
-          <p>7.5</p>
+          <p class="movie-rating"></p>
         </div>
-        <div class="movie-runtime">
+        <div class="movie-runtime-container">
           <h2>Runtime</h2>
-          <p>135</p>
+          <p class="movie-runtime"></p>
         </div>
-        <div class="movie-mpa">
+        <div class="movie-mpa-container">
           <h2>MPA rating</h2>
-          <p>R</p>
+          <p class="movie-mpa"></p>
         </div>
-        <div class="movie-description">
-            <p>Follows the lives of eight very different couples in dealing with their love lives in various loosely interrelated tales all set during a frantic month before Christmas in London, England.</p>
+        <div class="movie-description-container">
+            <p class="movie-description"></p>
         </div>
         <div class="read-more">
-            <a href="https://www.imdb.com/title/tt0314331/?ref_=fn_t_1" class="imdb-button">Read more on IMDB</a>
+            <a href="" class="imdb-button">Read more on IMDB</a>
         </div>
       </section>
     </div>
