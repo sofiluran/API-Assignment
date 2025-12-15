@@ -1,3 +1,8 @@
+body {
+  background-color: #5d0249;
+  font-family: "HennyPenny", Arial, Helvetica, sans-serif;
+}
+
 .menu {
   background-color: #5d0249;
 
@@ -10,24 +15,28 @@
   color: #ff8500;
 }
 
+.halloween-intro {
+  color: #ff8500;
+  font-family: "HennyPenny";
+  text-align: center;
+}
+
 .footer {
-  background-color: #5d0249
+  color: #ff8500;
+  background-color: #5d0249;
 }
 
 .user-input {
-  background-color: #5d0249
+  background-color: #5d0249;
+  display: flex;
 }
 
 .user-input-title {
   color: #ff9020;
 }
 
-body {
-  background-color: #5d0249
-}
-
 #button-random {
-  background-color: #ff9020
+  background-color: #ff9020;
 }
 
 #search-input {
@@ -35,14 +44,16 @@ body {
 }
 
 .movie {
- display: grid;
- grid-template-columns: 30% auto auto auto auto;
- background-color: #5d0249;;
- justify-content: center;
+  display: grid;
+  grid-template-columns: 30% auto auto auto auto;
+  grid-template-rows:  auto auto auto auto auto;
+  background-color: #5d0249;
+  justify-content: center;
 }
 
 .movie img {
-grid-row: 1 / span 3;
+  grid-row: 1 / span 4;
+  max-width: 100%;
 }
 
 .movie-title {
@@ -58,6 +69,19 @@ grid-row: 1 / span 3;
   padding: 16px;
   margin: 16px;
   text-align: center;
-  background-color: #7d0463;
   color: #ff8500;
+}
+
+.imdb-link {
+  align-content: center;
+  background-color: #ff8500;
+  border-radius: 30px;
+  grid-column: 5;
+  padding: 0 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.imdb-link:hover {
+  background-color: white;
 }
