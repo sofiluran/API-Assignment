@@ -7,6 +7,7 @@
 
 body {
   background-color: var(--background-secondary);
+  font-family: 'Cormorant Upright';
 }
 
 .header-title {
@@ -14,11 +15,35 @@ body {
 }
 
 .menu {
-  background-color: var(--background-tertiary);
+  background-color: var(--background-secondary);
 
   a {
     color: var(--color-primary);
+    font-weight: bold;
   }
+}
+
+.menu-item:hover {
+  text-decoration: underline var(--background-tertiary);
+  text-underline-offset: 10px;
+}
+
+.hero-image {
+  height: 471px;
+  object-fit: cover;
+}
+
+.valentines-introduction {
+  color: white;
+}
+
+.valentines-introduction-title {
+  text-align: center;
+}
+
+.valentines-introduction-content {
+  padding: 0 20px;
+  font-size: 1.5rem;
 }
 
 .user-input {
@@ -27,14 +52,17 @@ body {
 
 .user-input-title {
   color: var(--background-tertiary);
+  font-weight: bold;
 }
 
 #button-random {
   background-color: var(--background-tertiary);
+  font-family: 'Cormorant Upright';
 }
 
 #search-input {
   border: solid var(--background-tertiary);
+  font-family: 'Cormorant Upright';
 }
 
 .main {
