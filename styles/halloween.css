@@ -11,8 +11,13 @@ body {
   }
 }
 
+.menu-item {
+  font-family: "HennyPenny", Arial, Helvetica, sans-serif;
+}
+
 .header-title {
   color: #ff8500;
+  font-family: "HennyPenny", Arial, Helvetica, sans-serif;
 }
 
 .halloween-intro {
@@ -46,10 +51,10 @@ body {
 }
 
 .movie {
+  background-color: #5d0249;
   display: grid;
   grid-template-columns: 30% auto auto auto auto;
   grid-template-rows: auto auto auto auto auto;
-  background-color: #5d0249;
 }
 
 .movie img {
@@ -78,6 +83,7 @@ body {
   background-color: #ff8500;
   border-radius: 30px;
   grid-column: 5;
+  margin-right: 20px;
   padding: 0 20px;
   text-align: center;
   text-decoration: none;
@@ -135,7 +141,14 @@ body {
 
   .info {
     margin: 0;
-    padding: 0;
+    padding: 0 20px;
   }
 
+  .halloween-intro-content {
+    padding: 0 20px;
+  }
+
+  .movie-plot {
+    margin-top: 20px;
+  }
 }

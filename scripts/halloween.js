@@ -68,12 +68,10 @@ const displayResult = (movie) => {
   const imdbRating = movie.imdb_rating
   const link = movie.url
 
-
   const movieDiv = document.createElement("div")
   movieDiv.classList.add("movie")
 
   movieDiv.innerHTML = `
-  
   ${poster !== "N/A" ? `<img src="${poster}" alt="${title} poster">`
       : `<div></div>`
     } 
