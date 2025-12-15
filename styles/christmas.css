@@ -14,8 +14,12 @@
   justify-content: space-between;
 }
 
-.user-input-title {
+.user-input-text {
+  font-weight: bold;
+  display: inline-block;
+  margin: 15px;
   color: #f95856;
+  align-self: flex-end;
 }
 
 .christmas-introduction-title {
@@ -26,18 +30,33 @@
   padding: 0 20px;
 }
 
-#button-random {
+.button-random {
+  width: auto;
   background-color: #f95856;
   letter-spacing: 2px;
   font-weight: bold;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 15px 30px;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
-#search-input {
+.search-input {
   width: 70%;
   border: solid #f95856;
+  width: 80%;
+  padding: 15px 40px;
+  font-size: 1rem;
+  border-radius: 25px;
 }
 
 .main-content {
+  display: none;
+}
+
+.main-content.active {
   padding: 35px 0;
   align-items: center;
   display: flex;
@@ -46,7 +65,19 @@
   color: #fff;
 }
 
+.missing-message {
+  display: none;
+}
+
+.missing-message.active {
+  display: block;
+}
+
 .movie-grid-container {
+  display: none;
+}
+
+.movie-grid-container.active {
   display: grid;
   gap: 10px;
   grid-template: 100px 100px 1fr 100px / repeat(6, 1fr);
@@ -72,42 +103,42 @@
   width: 100%;
 }
 
-.movie-title {
+.movie-title-container {
   align-items: center;
   display: flex;
   grid-area: movie-title;
   justify-content: center;
 }
 
-.movie-year {
+.movie-year-container {
   grid-area: year;    
 }
 
-.movie-rating {
+.movie-rating-container {
   grid-area: rating;
 }
 
-.movie-runtime {
+.movie-runtime-container {
   grid-area: runtime;
 }
 
-.movie-mpa {
+.movie-mpa-container {
   grid-area: mpa;
 }
 
-.movie-year, .movie-rating, .movie-runtime, .movie-mpa {
+.movie-year-container, .movie-rating-container, .movie-runtime-container, .movie-mpa-container {
   align-self: center;
   text-align: center;
   font-weight: bold;
 }
 
-.movie-description {
+.movie-description-container {
   background-color: var(--website-color-beige);
   grid-area: description;
   padding: 0 5px;
 }
 
-.movie-description p {
+.movie-description{
   padding-left: 8%;
   padding-bottom: 15px;
 }
