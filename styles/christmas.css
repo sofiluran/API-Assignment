@@ -1,0 +1,172 @@
+.header, .main, .user-input, .hero-image-container, .christmas-introduction, .footer {
+  background-color: #1A4848;
+  font-family: "Asul", Arial, Helvetica, sans-serif;
+  color: #fff;
+}
+.menu-item, .header-title {
+  color: #fff;
+}
+
+.user-input {
+  padding-top: 35px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.user-input-text {
+  font-weight: bold;
+  display: inline-block;
+  margin: 15px;
+  color: #f95856;
+  align-self: flex-end;
+}
+
+.christmas-introduction-title {
+  text-align: center;
+}
+
+.christmas-introduction-content {
+  padding: 0 20px;
+}
+
+.button-random {
+  width: auto;
+  background-color: #f95856;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 15px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.search-input {
+  width: 70%;
+  border: solid #f95856;
+  width: 80%;
+  padding: 15px 40px;
+  font-size: 1rem;
+  border-radius: 25px;
+}
+
+.main-content {
+  display: none;
+}
+
+.main-content.active {
+  padding: 35px 0;
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  color: #fff;
+}
+
+.missing-message {
+  display: none;
+}
+
+.missing-message.active {
+  display: block;
+}
+
+.movie-grid-container {
+  display: none;
+}
+
+.movie-grid-container.active {
+  display: grid;
+  gap: 10px;
+  grid-template: 100px 100px 1fr 100px / repeat(6, 1fr);
+  grid-template-areas: 
+  "image image movie-title movie-title movie-title movie-title"
+  "image image year rating runtime mpa"
+  "image image description description description description"
+  "image image button button button button"
+  ;
+  height: 100%;
+  width: 80%;
+}
+
+.movie-image-container {
+  grid-area: image;
+}
+
+.movie-image-container img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.movie-title-container {
+  align-items: center;
+  display: flex;
+  grid-area: movie-title;
+  justify-content: center;
+}
+
+.movie-year-container {
+  grid-area: year;    
+}
+
+.movie-rating-container {
+  grid-area: rating;
+}
+
+.movie-runtime-container {
+  grid-area: runtime;
+}
+
+.movie-mpa-container {
+  grid-area: mpa;
+}
+
+.movie-year-container, .movie-rating-container, .movie-runtime-container, .movie-mpa-container {
+  align-self: center;
+  text-align: center;
+  font-weight: bold;
+}
+
+.movie-description-container {
+  background-color: var(--website-color-beige);
+  grid-area: description;
+  padding: 0 5px;
+}
+
+.movie-description{
+  padding-left: 8%;
+  padding-bottom: 15px;
+}
+
+.read-more {
+  display: flex;
+  grid-area: button;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.read-more a{
+  letter-spacing: 2px;
+  font-weight: bold;
+  width: 40%;
+  text-align: center;
+  background-color: #f95856;
+  border-radius: 30px;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.read-more a:hover, .button-random:hover{
+  background-color: #fff;
+  color: #f95856;
+}
+
+.footer {
+  padding: 30px;
+}
