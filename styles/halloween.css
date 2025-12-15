@@ -8,14 +8,24 @@
 
 .header-title {
   color: #ff8500;
+  font-family: "HennyPenny"
+}
+
+.menu-item {
+  font-family: "HennyPenny"
+}
+
+.hero-image-container {
+  background-color: #5d0249;
 }
 
 .footer {
-  background-color: #5d0249
+  background-color: #5d0249;
+  color:#ff8500;
 }
 
 .user-input {
-  background-color: #5d0249
+  background-color: #5d0249;
 }
 
 .user-input-title {
