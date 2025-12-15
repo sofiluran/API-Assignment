@@ -1,9 +1,7 @@
 :root {
-  --background-primary: #ffffff;
-  --background-secondary: #f0ead2;
-  --background-tertiary: #dde5b6;
-  --background-quaternary: #a98467;
-  --color-primary: #6c584c;
+  --background-primary: #235E6F;
+  --background-secondary: #424041;
+  --color-primary: #ffffff;
 }
 
 * {
@@ -19,15 +17,17 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  color: #ff798a;
 }
 
 .header {
   background-color: var(--background-primary);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.header__title {
+.header-title {
   text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .menu {
@@ -40,7 +40,7 @@ body {
 .menu-item,
 .header-item {
   text-decoration: none;
-  color: #ff798a;
+  color: var(--color-primary);
 }
 
 .menu-item:hover {
@@ -56,6 +56,25 @@ body {
 .main {
   background-color: var(--background-primary);
   flex-grow: 1;
+}
+
+.homepage-main {
+  display: flex;
+  background-image: url("../images/homepage_pattern.avif");
+  background-color: #235E6F;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage-content {
+  width: 50%;
+  background-color: var(--background-secondary);
+  text-align: center;
+  color: var(--color-primary);
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 15px;
+  padding: 15px;
 }
 
 .user-input {
@@ -92,8 +111,8 @@ body {
 }
 
 .footer {
-  background-color: #ff798a;
+  background-color: var(--background-primary);
   text-align: center;
-  color: #ffffff;
+  color: var(--color-primary);
   padding: 15px;
 }
