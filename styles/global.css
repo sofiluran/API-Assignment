@@ -76,6 +76,12 @@ body {
   padding: 15px 40px;
   font-size: 16px;
   cursor: pointer;
+  width: fit-content;
+}
+
+#button-random:hover {
+  background-color: #ffffff;
+  color: #ff798a;
 }
 
 #search-input {
