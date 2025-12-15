@@ -69,12 +69,4 @@ const displayResult = (movie) => {
     </div>
   `
   result.appendChild(movieDiv)
-
-  // const movieButton = document.createElement("div")
-  // movieButton.classList.add("imdb-button")
-
-  // movieButton.innerHTML = `
-  //   <button id="button-random">Read more on IMDB</button>`
-
-  // result.appendChild(movieButton)
 }
