@@ -51,7 +51,7 @@ const searchMovie = async () => {
     if (foundMovie) {
       displayResult(foundMovie)
     } else {
-      result.innerHTML = "This movie is not in our Top 50 Halloween-list!"
+      result.innerHTML = "This movie is not in our Top 50 Valentines-list!"
     }
   } catch (error) {
     result.textContent = error
