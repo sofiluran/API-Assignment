@@ -116,3 +116,16 @@ body {
   color: var(--color-primary);
   padding: 15px;
 }
+
+@media (min-width: 340px) and (max-width: 1024px) {
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .homepage-content {
+    width: 90%;
+    opacity: 0.9;
+  }
+}
