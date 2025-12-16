@@ -3,6 +3,7 @@
   font-family: "Asul", Arial, Helvetica, sans-serif;
   color: #fff;
 }
+
 .menu-item, .header-title {
   color: #fff;
 }
@@ -44,7 +45,7 @@
 }
 
 .search-input {
-  width: 70%;
+  flex-grow: 1;
   border: solid #f95856;
   width: 80%;
   padding: 15px 40px;
@@ -60,6 +61,7 @@
   padding: 35px 0;
   align-items: center;
   display: flex;
+  flex-direction: column;
   flex-grow: 1;
   justify-content: center;
   color: #fff;
@@ -74,6 +76,10 @@
 }
 
 .movie-grid-container {
+  display: none;
+}
+
+.status-message {
   display: none;
 }
 
@@ -169,4 +175,69 @@
 
 .footer {
   padding: 30px;
+}
+
+
+@media (min-width: 340px) and (max-width: 1024px) {
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .main-content.active {
+    padding-top: 0;
+  }
+
+  .movie-image-container{
+    display: flex;
+    justify-content: center;
+  }
+
+  .movie-image-container img{
+    max-height: 400px;
+    width: auto;
+  }
+
+  .user-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .user-input-text {
+    display: flex;
+    margin: 15px;
+    color: #f95856;
+    align-self: center;
+  }
+
+  .movie-grid-container.active {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .movie-title {
+    text-align: center;
+  }
+
+  .read-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button-random {
+    width: 100%;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .read-more a{
+    width: 80%;
+  }
 }

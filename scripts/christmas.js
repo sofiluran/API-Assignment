@@ -10,15 +10,15 @@ const movieRating = document.querySelector(".movie-rating");
 const movieRuntime = document.querySelector(".movie-runtime");
 const movieMpa = document.querySelector(".movie-mpa");
 const movieDescription = document.querySelector(".movie-description");
+const statusMessage = document.querySelector(".status-message");
 const imdbButton = document.querySelector(".imdb-button");
-let christmasMovies;
-let remainingMovies;
-
+let christmasMovies = [];
+let remainingMovies = []; 
 
 const callChristmasApi = () => {
   fetch(christmasApiUrl).then((response) => {
     if (!response.ok) {
-      throw new Error("Failed to give response")
+      throw new Error(`Failed to give response: ${response.status}`);
     }
     return response.json()
   }).then((data) => {
@@ -36,25 +36,32 @@ christmasSearchButton.addEventListener("click", () => {
   mainContent.classList.add("active");
   gridContent.classList.add("active");
   const movie = getRandomChristmasMovie();
-  movieImage.src = movie.img_src;
-  movieImage.alt = movie.title;
-  movieTitle.textContent = movie.title;
-  movieYear.textContent = movie.release_year;
-  movieRating.textContent = movie.imdb_rating;
-  movieRuntime.textContent = movie.runtime;
-  movieMpa.textContent = movie.rating;
-  movieDescription.textContent = movie.description;
-  imdbButton.href = movie.imdb_link;
+  if (movie) {
+    displayResults(movie);
+  }
 })
 
 const getRandomChristmasMovie = () => {
+  statusMessage.style.display = "none";
+  gridContent.style.display = ""
+  if (remainingMovies.length === 0) {
+    statusMessage.style.display = "flex";
+    gridContent.style.display = "none";
+    statusMessage.textContent = "You have gone through all the movies on our list.";
+    remainingMovies = Array.from(christmasMovies);
+    return null;
+  }
+  statusMessage.textContent = "";
+  statusMessage.style.display = "none";
   let randomIndex = Math.floor(Math.random() * remainingMovies.length);
   let currentMovie = remainingMovies[randomIndex];
   remainingMovies = remainingMovies.filter(movie => movie !== currentMovie);
-  return currentMovie; 
+  return currentMovie;
 }
 
 const searchMovie = async () => {
+  statusMessage.style.display = "none";
+  gridContent.style.display = "";
   let searchValue = christmasSearchInput.value.toLowerCase().trim();
 
   if (!searchValue) return;
@@ -63,7 +70,7 @@ const searchMovie = async () => {
     const response = await (fetch(christmasApiUrl));
 
     if (!response.ok) {
-      throw new Error("Could not fetch resource!")
+      throw new Error(`Could not fetch resource: ${response.status}`)
     }
 
     const movies = await response.json();
@@ -73,10 +80,12 @@ const searchMovie = async () => {
     if (foundMovie) {
       displayResults(foundMovie);
     } else {
-      movieTitle.textContent = "Movie is not on our list";
+      statusMessage.style.display = "block";
+      gridContent.style.display = "none";
+      statusMessage.textContent = "Movie is not on our list!";
     }
   } catch (error) {
-    movieTitle.textContent = error;
+    console.error("Error fetching API", error)
   }
 }
 
