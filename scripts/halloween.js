@@ -2,23 +2,32 @@ const halloweenApi = "https://halloween-api.vercel.app/movies"
 const searchInput = document.getElementById("search-input")
 const result = document.querySelector(".result")
 const randomButton = document.getElementById("button-random")
+let remainingMovies = []
 
-const callHalloweenMovie = async () => {
+
+const initializeMovies = async () => {
   try {
-    const response = await (fetch(halloweenApi))
-
-    if (!response.ok) {
-      throw new Error("Could not fetch API")
-    }
-
-    const movies = await response.json()
-    const randomMovie = movies[Math.floor(Math.random() * movies.length)]
-
-    displayResult(randomMovie)
-
+    const response = await fetch(halloweenApi)
+    if (!response.ok) throw new Error("Could not fetch API")
+      remainingMovies = await response.json()
   } catch (error) {
-    result.textContent = error
+    result.textContent = error.message;
   }
+}
+
+const callHalloweenMovie = () => {
+  if (remainingMovies.length === 0) {
+    result.textContent = "There are no more movies in the Top 50 list!"
+    randomButton.disabled = true
+    return
+  }
+
+  const randomIndex = Math.floor(Math.random() * remainingMovies.length)
+  const randomMovie = remainingMovies[randomIndex]
+
+  remainingMovies.splice(randomIndex, 1)
+
+  displayResult(randomMovie)
 }
 
 randomButton.addEventListener("click", callHalloweenMovie)
@@ -98,3 +107,4 @@ const displayResult = (movie) => {
   result.appendChild(movieDiv)
 }
 
+initializeMovies()
