@@ -153,12 +153,13 @@
   display: flex;
   grid-area: button;
   align-items: flex-end;
-  justify-content: flex-end;
+  justify-content: space-around;
 }
 
-.read-more a{
+.read-more a, #favouriteBtn{
   letter-spacing: 2px;
   font-weight: bold;
+  font-size: 0.8rem;
   width: 40%;
   text-align: center;
   background-color: #f95856;
@@ -166,9 +167,11 @@
   color: #fff;
   padding: 10px 20px;
   text-decoration: none;
+  border: none;
+  height: 35px;
 }
 
-.read-more a:hover, .button-random:hover{
+.read-more a:hover, .button-random:hover, #favouriteBtn:hover{
   background-color: #fff;
   color: #f95856;
 }
