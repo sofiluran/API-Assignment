@@ -58,6 +58,13 @@ body {
 #button-random {
   background-color: var(--background-tertiary);
   font-family: 'Cormorant Upright';
+  text-decoration: none;
+  height: fit-content;
+  width: max-content;
+}
+
+.imdb-button {
+  margin-left: 32px;
 }
 
 #search-input {
@@ -66,31 +73,48 @@ body {
 }
 
 .main {
-  background-color: #fdb1b5;
+  background-color: var(--background-secondary);
+  color: var(--color-primary);
+  text-align: center;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
 }
 
 .movie-container {
+  display: grid;
+  grid-template-columns: 30% 17.5% 17.5% 17.5% 17.5%;
+  grid-template-rows: auto 30% auto auto auto;
+  padding: 40px;
+  font-size: 1.4rem;
+  width: 100%;
+}
+
+.movie-container img {
+  grid-row: 1 / span 4;
+  max-width: 100%;
+}
+
+.movie-title {
+  grid-column: 2 / span 4;
   display: flex;
-  justify-content: space-around;
-  padding: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie-plot {
+  grid-column: 2 / span 4;
   color: var(--color-primary);
-  padding-left: 100px;
+  margin: 16px;
+  padding-left: 16px;
+  text-align: justify;
+  font-size: 1.5rem;
 }
 
-h2 {
+.info {
+  margin: 16px;
   text-align: center;
-}
-
-.movie-info {
-  display: flex;
-  flex-direction: column;
-  padding: 15px 100px 50px 100px;
-}
-
-.movie-stats {
-  display: flex;
-  justify-content: space-between;
-  text-align: center;
+  color: var(--color-primary);
 }
 
 .footer {
@@ -142,10 +166,35 @@ h2 {
 
   #button-random {
     width: 100%;
+    text-align: center;
   }
 
   .user-input-title {
     width: 100%;
+  }
+
+  .movie-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px;
+  }
+
+  .movie-title {
+    padding: 15px;
+  }
+
+  .info {
+    margin: 0;
+  }
+
+  .movie-plot {
+    padding: 0px;
+    font-size: 1rem;
+  }
+
+  .imdb-button {
+    margin-left: 0;
   }
 
   .footer {
