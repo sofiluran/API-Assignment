@@ -1,5 +1,6 @@
 body {
   background-color: #5d0249;
+  color: #ff8500;
   font-family: "HennyPenny", Arial, Helvetica, sans-serif;
 }
 
@@ -95,6 +96,7 @@ body {
 
 .result {
   font-size: x-large;
+  padding: 0 40px;
   text-align: center;
 }
 
@@ -150,5 +152,9 @@ body {
 
   .movie-plot {
     margin-top: 20px;
+  }
+
+  .result {
+    padding: 0 8px;
   }
 }
