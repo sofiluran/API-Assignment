@@ -121,7 +121,6 @@ body {
   .menu {
     display: flex;
     flex-direction: column;
-    /* gap: 10px; */
   }
 
   .header-title {
