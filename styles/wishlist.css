@@ -46,6 +46,7 @@
 }
 
 .empty-list {
+  width: 70%;
   color: crimson;
   font-weight: bold;
   font-size: 2rem;
@@ -86,6 +87,10 @@ h3 {
 
   .wishlist-title {
     font-size: 1.5rem;
+  }
+  
+  .empty-list {
+    margin: auto;
   }
   
   .fav {
