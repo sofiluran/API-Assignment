@@ -84,20 +84,20 @@ const displayResult = (movie) => {
   ${poster !== "N/A" ? `<img src="${poster}" alt="${title} poster">`
       : `<div></div>`
     } 
-    <h2 class="movie-title info"> ${title} </h2>
-    <div class="info"> 
+    <h2 class="movie-title movie-info"> ${title} </h2>
+    <div class="movie-info"> 
     <h3>Year:</h3>
     <p>${year}</p>
     </div>
-    <div class="info"> 
+    <div class="movie-info"> 
     <h3> Imdb Rating:</h3>
     <p>${imdbRating}</p>
     </div>
-    <div class="info"> 
+    <div class="movie-info"> 
     <h3> Runtime:</h3>
     <p> ${runtime} </p>
     </div>
-    <div class="info"> 
+    <div class="movie-info"> 
     <h3> MPA Rating:</h3>
     <p>${rating}</p>
     </div>
