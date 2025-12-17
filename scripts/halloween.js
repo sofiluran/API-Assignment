@@ -110,9 +110,11 @@ const displayResult = (movie) => {
 
   result.appendChild(movieDiv)
 
+  const prefix = "halloween";
+  const uniqueMovieId = `${prefix}_${movie.id}`;
 
   const watchlistBtn = document.querySelector("#favouriteBtn");
-  const isFav = isOnWatchlist(movie.id);
+  const isFav = isOnWatchlist(uniqueMovieId);
   
   watchlistBtn.textContent = isFav ? "Remove" : "Add to Watchlist";
 
@@ -134,20 +136,20 @@ const saveToWatchlist = (list) => localStorage.setItem("favourites", JSON.string
 
 const getWatchlist = () => JSON.parse(localStorage.getItem("favourites") || "[]");
 
-const isOnWatchlist = (movieId) => {
+const isOnWatchlist = (uniqueMovieId) => {
   const fav = getWatchlist();
-  return fav.some(m => m.id === movieId)
+  return fav.some(m => m.id === uniqueMovieId)
 }
 
-const addToWatchlist = (movie) => {
+const addToWatchlist = (movie, prefix) => {
+  const uniqueMovieId = `${prefix}_${movie.id}`;
   const fav = getWatchlist()
-  if (fav.some(m => m.id === movie.id)) {
-    alert("Already on the Watchlist!");
+  if (fav.some(m => m.id === uniqueMovieId)) {
     return;
   }
 
   const favMovie = {
-    id: movie.id,
+    id: uniqueMovieId,
     title: movie.title,
     year: movie.release_year,
     poster: movie.poster,
@@ -156,13 +158,12 @@ const addToWatchlist = (movie) => {
 
   fav.push(favMovie);
   saveToWatchlist(fav);
-  alert("Added to the Watchlist!");
+  window.updateWatchlistCounter();
 }
 
-const removeFromWatchlist = (movieId) => {
+const removeFromWatchlist = (uniqueMovieId) => {
   const fav = getWatchlist();
-  const updateFav = fav.filter(m => m.id !== movieId);
+  const updateFav = fav.filter(m => m.id !== uniqueMovieId);
   saveToWatchlist(updateFav);
-  alert("Removed from Watchlist");
-
+  window.updateWatchlistCounter();
 }
