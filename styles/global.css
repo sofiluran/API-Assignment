@@ -22,15 +22,22 @@ body {
 .header {
   background-color: var(--background-primary);
   font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.header-title {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
+.header-logo {
+  width: 20%;
+}
+
+.header-logo img {
+  width: 100px;
+  height: auto;
 }
 
 .menu {
+  width: 80%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -41,6 +48,7 @@ body {
 .header-item {
   text-decoration: none;
   color: var(--color-primary);
+  font-size: 1.2rem;
 }
 
 .menu-item:hover {
