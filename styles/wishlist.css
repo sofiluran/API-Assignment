@@ -1,0 +1,94 @@
+.main {
+  background-color: var(--background-primary);
+  flex-grow: 1;
+}
+
+.wishlist-main {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-image: url("../images/homepage_pattern.avif");
+  background-color: #235E6F;
+  flex-grow: 1;
+}
+
+.wishlist-content {
+  display: flex;
+  justify-content: center;
+}
+
+.wishlist-title {
+  color: crimson;
+  background-color: #235E6F;
+  text-align: center;
+  font-size: 3rem;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.favourites {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fit, 400px);
+  justify-content: center;
+  width: 100%;
+}
+
+.fav {
+  background-color: crimson;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+  max-width: 300px;
+  border-radius: 15px;
+  gap: 10px;
+}
+
+.empty-list {
+  color: crimson;
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+  background-color: #235E6F;
+}
+
+.fav img {
+  max-height: 400px;
+  width: auto;
+}
+
+h3 {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.favToggleBtn, .imdb-button {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border-radius: 15px;
+  background-color: #235E6F;
+  border: none;
+  padding: 10px 0;
+}
+
+@media (min-width: 340px) and (max-width: 1024px) {
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .wishlist-title {
+    font-size: 1.5rem;
+  }
+  
+  .fav {
+    margin: 0 auto;
+  }
+}

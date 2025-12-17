@@ -107,16 +107,6 @@ body {
     align-items: center;
   }
 
-  .menu {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .header-item {
-    text-align: center;
-  }
-
   .user-input {
     display: flex;
     flex-wrap: wrap;

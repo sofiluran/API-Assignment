@@ -121,9 +121,16 @@ body {
   .menu {
     display: flex;
     flex-direction: column;
-    gap: 10px;
   }
-  
+
+  .header-title {
+    display: none;
+  }
+
+  .menu-item {
+    padding: 8px;
+  }
+
   .homepage-content {
     width: 90%;
     opacity: 0.9;

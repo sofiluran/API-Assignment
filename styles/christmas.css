@@ -1,10 +1,16 @@
-.header, .main, .user-input, .hero-image-container, .christmas-introduction, .footer {
+.header,
+.main,
+.user-input,
+.hero-image-container,
+.christmas-introduction,
+.footer {
   background-color: #1A4848;
   font-family: "Asul", Arial, Helvetica, sans-serif;
   color: #fff;
 }
 
-.menu-item, .header-title {
+.menu-item,
+.header-title {
   color: #fff;
 }
 
@@ -87,11 +93,11 @@
   display: grid;
   gap: 10px;
   grid-template: 100px 100px 1fr 100px / repeat(6, 1fr);
-  grid-template-areas: 
-  "image image movie-title movie-title movie-title movie-title"
-  "image image year rating runtime mpa"
-  "image image description description description description"
-  "image image button button button button"
+  grid-template-areas:
+    "image image movie-title movie-title movie-title movie-title"
+    "image image year rating runtime mpa"
+    "image image description description description description"
+    "image image button button button button"
   ;
   height: 100%;
   width: 80%;
@@ -117,7 +123,7 @@
 }
 
 .movie-year-container {
-  grid-area: year;    
+  grid-area: year;
 }
 
 .movie-rating-container {
@@ -132,7 +138,10 @@
   grid-area: mpa;
 }
 
-.movie-year-container, .movie-rating-container, .movie-runtime-container, .movie-mpa-container {
+.movie-year-container,
+.movie-rating-container,
+.movie-runtime-container,
+.movie-mpa-container {
   align-self: center;
   text-align: center;
   font-weight: bold;
@@ -144,7 +153,7 @@
   padding: 0 5px;
 }
 
-.movie-description{
+.movie-description {
   padding-left: 8%;
   padding-bottom: 15px;
 }
@@ -153,12 +162,13 @@
   display: flex;
   grid-area: button;
   align-items: flex-end;
-  justify-content: flex-end;
+  justify-content: space-around;
 }
 
-.read-more a{
+.read-more a, #favouriteBtn{
   letter-spacing: 2px;
   font-weight: bold;
+  font-size: 0.8rem;
   width: 40%;
   text-align: center;
   background-color: #f95856;
@@ -166,9 +176,11 @@
   color: #fff;
   padding: 10px 20px;
   text-decoration: none;
+  border: none;
+  height: 35px;
 }
 
-.read-more a:hover, .button-random:hover{
+.read-more a:hover, .button-random:hover, #favouriteBtn:hover{
   background-color: #fff;
   color: #f95856;
 }
@@ -180,22 +192,16 @@
 
 @media (min-width: 340px) and (max-width: 1024px) {
 
-  .menu {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
   .main-content.active {
     padding-top: 0;
   }
 
-  .movie-image-container{
+  .movie-image-container {
     display: flex;
     justify-content: center;
   }
 
-  .movie-image-container img{
+  .movie-image-container img {
     max-height: 400px;
     width: auto;
   }
@@ -237,7 +243,7 @@
     width: 100%;
   }
 
-  .read-more a{
+  .read-more a {
     width: 80%;
   }
 }
