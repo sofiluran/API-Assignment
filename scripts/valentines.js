@@ -88,33 +88,49 @@ const displayResult = (movie) => {
     } 
     <h2 class="movie-title movie-info"> ${title} </h2>
     <div class="movie-info"> 
-    <h3>Year:</h3>
-    <p>${year}</p>
+      <h3>Year:</h3>
+      <p>${year}</p>
     </div>
     <div class="movie-info"> 
-    <h3> Imdb Rating:</h3>
-    <p>${imdbRating}</p>
+      <h3>Imdb Rating:</h3>
+      <p>${imdbRating}</p>
     </div>
     <div class="movie-info"> 
-    <h3> Runtime:</h3>
-    <p> ${runtime} </p>
+      <h3>Runtime:</h3>
+      <p>${runtime}</p>
     </div>
     <div class="movie-info"> 
-    <h3> MPA Rating:</h3>
-    <p>${rating}</p>
+      <h3>MPA Rating:</h3>
+      <p>${rating}</p>
     </div>
-    <p class="movie-plot"> ${description} </p>
+    <p class="movie-plot">${description}</p>
     <button id="favouriteBtn"></button>
-    <a href="${link}" id="button-random", class="imdb-button">Read more on IMDB</a>
+    <a href="${link}" class="imdb-button">Read more on IMDB</a>
   `
   result.appendChild(movieDiv)
-  const isFav = isOnWatchlist(movie.id);
+
   const watchlistBtn = document.querySelector("#favouriteBtn");
+  const isFav = isOnWatchlist(movie.id);
+
   watchlistBtn.textContent = isFav ? "Remove" : "Add to Watchlist";
+
+  watchlistBtn.addEventListener("click", () => {
+    if (!currentMovie) return;
+
+    if (isOnWatchlist(currentMovie.id)) {
+      removeFromWatchlist(currentMovie.id);
+      watchlistBtn.textContent = "Add to Watchlist";
+    } else {
+      addToWatchlist(currentMovie);
+      watchlistBtn.textContent = "Remove from Watchlist";
+    }
+
+  })
 }
 
-const saveToWatchlist = (list) => localStorage.setItem("favourites", JSON.stringify(list));
+initializeMovies()
 
+const saveToWatchlist = (list) => localStorage.setItem("favourites", JSON.stringify(list));
 const getWatchlist = () => JSON.parse(localStorage.getItem("favourites") || "[]");
 
 const isOnWatchlist = (movieId) => {
@@ -141,20 +157,6 @@ const addToWatchlist = (movie) => {
   saveToWatchlist(fav);
   alert("Added to the Watchlist!");
 }
-
-const watchlistBtn = document.querySelector("#favouriteBtn");
-
-watchlistBtn.addEventListener("click", () => {
-  if (!currentMovie) return;
-
-  if (isOnWatchlist(currentMovie.id)) {
-    removeFromWatchlist(currentMovie.id);
-    watchlistBtn.textContent = "Add to Watchlist";
-  } else {
-    addToWatchlist(currentMovie);
-    watchlistBtn.textContent = "Remove from Watchlist";
-  }
-})
 
 const removeFromWatchlist = (movieId) => {
   const fav = getWatchlist();
