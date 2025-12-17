@@ -10,6 +10,7 @@
   <link rel="icon" type="image/x-icon" href="./logo/css_logo.png">
   <script src="./scripts/christmas.js" defer></script>
   <script src="./scripts/watchlist.js" defer></script>
+  <script src="./scripts/watchlist_counter.js" defer></script>
 </head>
 <body>
   <header class="header">
@@ -23,7 +24,12 @@
       <a href="christmas.html" class="menu-item">CHRISTMAS</a>
       <a href="halloween.html" class="menu-item">HALLOWEEN</a>
       <a href="valentines.html" class="menu-item active">VALENTINES DAY</a>
-      <a href="watchlist.html" class="menu-item active">WATCHLIST</a>
+      <div class="watchlist-container">
+        <a href="watchlist.html" class="menu-item watchlist-link" aria-label="Watchlist">
+          <img class="watchlist-icon" src="./icon/watchlist_icon.png" alt="watchlist-icon">
+          <span class="watchlist-counter"></span>
+        </a>
+      </div>
     </nav>
   </header>
   <div class="hero-image-container">
