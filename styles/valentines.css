@@ -10,7 +10,8 @@ body {
   font-family: 'Cormorant Upright';
 }
 
-.menu, .header {
+.menu,
+.header {
   background-color: var(--background-secondary);
   font-family: 'Cormorant Upright';
 
@@ -52,21 +53,10 @@ body {
   font-weight: bold;
 }
 
-#button-random {
-  background-color: var(--background-tertiary);
-  font-family: 'Cormorant Upright';
-  text-decoration: none;
-  height: fit-content;
-  width: max-content;
-}
-
-.imdb-button {
-  margin-left: 32px;
-}
-
 #search-input {
   border: solid var(--background-tertiary);
   font-family: 'Cormorant Upright';
+  width: 80%;
 }
 
 .main {
@@ -108,10 +98,41 @@ body {
   font-size: 1.5rem;
 }
 
-.info {
+.movie-info {
   margin: 16px;
   text-align: center;
   color: var(--color-primary);
+}
+
+#button-random {
+  background-color: var(--background-tertiary);
+  font-family: 'Cormorant Upright';
+  text-decoration: none;
+  height: fit-content;
+  width: max-content;
+}
+
+.imdb-button,
+#favouriteBtn {
+  background-color: var(--background-tertiary);
+  font-family: 'Cormorant Upright';
+  text-decoration: none;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 15px 90px;
+  font-size: 16px;
+  cursor: pointer;
+  width: max-content;
+  height: max-content;
+  grid-column: span 2;
+  margin: auto;
+}
+
+.imdb-button:hover,
+#favouriteBtn:hover {
+  background-color: #ffffff;
+  color: #ff798a;
 }
 
 .footer {
@@ -119,7 +140,7 @@ body {
   border-top: solid var(--background-primary);
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (min-width: 340px) and (max-width: 1024px) {
 
   body {
     align-items: center;
@@ -143,16 +164,16 @@ body {
     text-align: center;
   }
 
-  #search-input {
-    width: 100%;
-  }
-
   .user-input {
     display: flex;
     flex-wrap: wrap;
     width: min-content;
     text-align: center;
-    width: auto;
+    width: 100%;
+  }
+
+  #search-input {
+    width: 100%;
   }
 
   #button-random {
@@ -184,8 +205,11 @@ body {
     font-size: 1rem;
   }
 
-  .imdb-button {
-    margin-left: 0;
+  .imdb-button,
+  #favouriteBtn {
+    align-self: center;
+    margin: 15px;
+    width: inherit;
   }
 
   .footer {
