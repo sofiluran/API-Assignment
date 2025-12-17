@@ -3,13 +3,14 @@ const searchInput = document.getElementById("search-input")
 const result = document.querySelector(".result")
 const randomButton = document.getElementById("button-random")
 let remainingMovies = []
+let currentMovie = null;
 
 
 const initializeMovies = async () => {
   try {
     const response = await fetch(halloweenApi)
     if (!response.ok) throw new Error("Could not fetch API")
-      remainingMovies = await response.json()
+    remainingMovies = await response.json()
   } catch (error) {
     result.textContent = error.message;
   }
@@ -66,6 +67,7 @@ searchInput.addEventListener("input", () => {
 })
 
 const displayResult = (movie) => {
+  currentMovie = movie
   result.innerHTML = ""
 
   const title = movie.title
@@ -102,9 +104,66 @@ const displayResult = (movie) => {
     <div>${rating}</div>
     </div>
     <h3 class="movie-plot info"> ${description} </h3>
+    <button id="favouriteBtn"></button>
     <a href="${link}" class="imdb-link">Read more on IMDB</a>
   `
+
   result.appendChild(movieDiv)
-}
+
+  const prefix = "halloween";
+  const uniqueMovieId = `${prefix}_${movie.id}`;
+
+  const watchlistBtn = document.querySelector("#favouriteBtn");
+  const isFav = isOnWatchlist(uniqueMovieId);
+  
+  watchlistBtn.textContent = isFav ? "Remove" : "Add to Watchlist";
+
+  watchlistBtn.addEventListener("click", () => {
+  if (!currentMovie) return;
+
+  if (isOnWatchlist(currentMovie.id)) {
+    removeFromWatchlist(currentMovie.id);
+    watchlistBtn.textContent = "Add to Watchlist";
+  } else {
+    addToWatchlist(currentMovie);
+    watchlistBtn.textContent = "Remove from Watchlist";
+  }
+})}
 
 initializeMovies()
+
+const saveToWatchlist = (list) => localStorage.setItem("favourites", JSON.stringify(list));
+
+const getWatchlist = () => JSON.parse(localStorage.getItem("favourites") || "[]");
+
+const isOnWatchlist = (uniqueMovieId) => {
+  const fav = getWatchlist();
+  return fav.some(m => m.id === uniqueMovieId)
+}
+
+const addToWatchlist = (movie, prefix) => {
+  const uniqueMovieId = `${prefix}_${movie.id}`;
+  const fav = getWatchlist()
+  if (fav.some(m => m.id === uniqueMovieId)) {
+    return;
+  }
+
+  const favMovie = {
+    id: uniqueMovieId,
+    title: movie.title,
+    year: movie.release_year,
+    poster: movie.poster,
+    imdb: movie.url
+  }
+
+  fav.push(favMovie);
+  saveToWatchlist(fav);
+  window.updateWatchlistCounter();
+}
+
+const removeFromWatchlist = (uniqueMovieId) => {
+  const fav = getWatchlist();
+  const updateFav = fav.filter(m => m.id !== uniqueMovieId);
+  saveToWatchlist(updateFav);
+  window.updateWatchlistCounter();
+}

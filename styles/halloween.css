@@ -27,6 +27,10 @@ body {
   text-align: center;
 }
 
+.halloween-intro-content {
+  padding: 10px;
+}
+
 .footer {
   color: #ff8500;
   background-color: #5d0249;
@@ -61,6 +65,7 @@ body {
 .movie img {
   grid-row: 1 / span 4;
   max-width: 100%;
+  margin-top: 40px;
 }
 
 .movie-title {
@@ -79,19 +84,41 @@ body {
   color: #ff8500;
 }
 
+#favouriteBtn {
+  background-color: #ff8500;
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  font-family: "HennyPenny", Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  margin-left: 20px;
+  text-align: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  width: 200px;
+}
+
 .imdb-link {
   align-content: center;
   background-color: #ff8500;
+  border: none;
   border-radius: 30px;
+  color: #fff;
+  font-size: 0.8rem;
   grid-column: 5;
+  letter-spacing: 2px;
   margin-right: 20px;
   padding: 0 20px;
   text-align: center;
   text-decoration: none;
+  width: 200px;
 }
 
-.imdb-link:hover {
-  background-color: white;
+.imdb-link:hover,
+#favouriteBtn:hover {
+  background-color: #fff;
+  color: #ff8500;
 }
 
 .result {
@@ -101,7 +128,7 @@ body {
 }
 
 
-@media screen and (max-width: 700px) {
+@media (min-width: 340px) and (max-width: 1024px) {
 
   .body {
     align-items: center;
@@ -127,16 +154,12 @@ body {
 
   .imdb-link {
     display: block;
-    margin: 20px 0;
-    width: 100%;
+    margin: auto;
+    padding: 10px;
   }
 
   .info {
     margin: 0;
-    padding: 0 20px;
-  }
-
-  .halloween-intro-content {
     padding: 0 20px;
   }
 
@@ -147,4 +170,10 @@ body {
   .result {
     padding: 0 8px;
   }
+
+  #favouriteBtn {
+    margin: 0 0 20px 0;
+  }
+
+
 }
