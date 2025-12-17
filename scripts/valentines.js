@@ -3,6 +3,7 @@ const searchInput = document.getElementById("search-input")
 const result = document.querySelector(".main")
 const randomButton = document.getElementById("button-random")
 let remainingMovies = []
+let currentMovie = null;
 
 const initializeMovies = async () => {
   try {
@@ -65,6 +66,7 @@ searchInput.addEventListener("input", () => {
 })
 
 const displayResult = (movie) => {
+  currentMovie = movie
   result.innerHTML = ""
 
   const title = movie.title
@@ -102,9 +104,61 @@ const displayResult = (movie) => {
     <p>${rating}</p>
     </div>
     <p class="movie-plot"> ${description} </p>
+    <button id="favouriteBtn"></button>
     <a href="${link}" id="button-random", class="imdb-button">Read more on IMDB</a>
   `
   result.appendChild(movieDiv)
+  const isFav = isOnWatchlist(movie.id);
+  const watchlistBtn = document.querySelector("#favouriteBtn");
+  watchlistBtn.textContent = isFav ? "Remove" : "Add to Watchlist";
 }
 
-initializeMovies()
+const saveToWatchlist = (list) => localStorage.setItem("favourites", JSON.stringify(list));
+
+const getWatchlist = () => JSON.parse(localStorage.getItem("favourites") || "[]");
+
+const isOnWatchlist = (movieId) => {
+  const fav = getWatchlist();
+  return fav.some(m => m.id === movieId)
+}
+
+const addToWatchlist = (movie) => {
+  const fav = getWatchlist()
+  if (fav.some(m => m.id === movie.id)) {
+    alert("Already on the Watchlist!");
+    return;
+  }
+
+  const favMovie = {
+    id: movie.id,
+    title: movie.title,
+    year: movie.release_year,
+    poster: movie.poster,
+    imdb: movie.url
+  }
+
+  fav.push(favMovie);
+  saveToWatchlist(fav);
+  alert("Added to the Watchlist!");
+}
+
+const watchlistBtn = document.querySelector("#favouriteBtn");
+
+watchlistBtn.addEventListener("click", () => {
+  if (!currentMovie) return;
+
+  if (isOnWatchlist(currentMovie.id)) {
+    removeFromWatchlist(currentMovie.id);
+    watchlistBtn.textContent = "Add to Watchlist";
+  } else {
+    addToWatchlist(currentMovie);
+    watchlistBtn.textContent = "Remove from Watchlist";
+  }
+})
+
+const removeFromWatchlist = (movieId) => {
+  const fav = getWatchlist();
+  const updateFav = fav.filter(m => m.id !== movieId);
+  saveToWatchlist(updateFav);
+  alert("Removed from Watchlist");
+}

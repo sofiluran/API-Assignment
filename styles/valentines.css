@@ -10,7 +10,8 @@ body {
   font-family: 'Cormorant Upright';
 }
 
-.menu, .header {
+.menu,
+.header {
   background-color: var(--background-secondary);
   font-family: 'Cormorant Upright';
 
@@ -67,6 +68,7 @@ body {
 #search-input {
   border: solid var(--background-tertiary);
   font-family: 'Cormorant Upright';
+  width: 80%;
 }
 
 .main {
@@ -114,12 +116,20 @@ body {
   color: var(--color-primary);
 }
 
+#favouriteBtn {
+  background-color: var(--background-tertiary);
+  font-family: 'Cormorant Upright';
+  text-decoration: none;
+  height: fit-content;
+  width: max-content;
+}
+
 .footer {
   background-color: var(--background-secondary);
   border-top: solid var(--background-primary);
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (min-width: 340px) and (max-width: 1024px) {
 
   body {
     align-items: center;
@@ -143,16 +153,16 @@ body {
     text-align: center;
   }
 
-  #search-input {
-    width: 100%;
-  }
-
   .user-input {
     display: flex;
     flex-wrap: wrap;
     width: min-content;
     text-align: center;
-    width: auto;
+    width: 100%;
+  }
+
+  #search-input {
+    width: 100%;
   }
 
   #button-random {
