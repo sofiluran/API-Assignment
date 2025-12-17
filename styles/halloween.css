@@ -27,6 +27,10 @@ body {
   text-align: center;
 }
 
+.halloween-intro-content {
+  padding: 10px;
+}
+
 .footer {
   color: #ff8500;
   background-color: #5d0249;
@@ -61,6 +65,7 @@ body {
 .movie img {
   grid-row: 1 / span 4;
   max-width: 100%;
+  margin-top: 40px;
 }
 
 .movie-title {
@@ -155,10 +160,6 @@ body {
 
   .info {
     margin: 0;
-    padding: 0 20px;
-  }
-
-  .halloween-intro-content {
     padding: 0 20px;
   }
 
