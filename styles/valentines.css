@@ -16,6 +16,7 @@ body {
 
 .menu {
   background-color: var(--background-secondary);
+  font-family: 'Cormorant Upright';
 
   a {
     color: var(--color-primary);
@@ -104,17 +105,6 @@ h2 {
     align-items: center;
   }
 
-  .header-title {
-    text-align: center;
-    margin: 0;
-  }
-
-  .menu {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
   .hero-image {
     width: 100%;
     height: auto;
@@ -130,7 +120,7 @@ h2 {
   }
 
   #search-input {
-    width: fit-content;
+    width: 100%;
   }
 
   .user-input {
@@ -138,6 +128,7 @@ h2 {
     flex-wrap: wrap;
     width: min-content;
     text-align: center;
+    width: auto;
   }
 
   #button-random {
