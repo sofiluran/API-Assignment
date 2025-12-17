@@ -30,8 +30,12 @@ window.addEventListener("DOMContentLoaded", () => {
           const updatedFavs = favsList.filter(m => m.id !== movie.id);
           localStorage.setItem("favourites", JSON.stringify(updatedFavs));
           div.remove();
-          alert("Removed from favourites!");
+
+          if (window.updateWatchlistCounter) {
+            window.updateWatchlistCounter();
+          }
         }
+
         if (document.querySelectorAll(".favourites .fav").length === 0) {
           favContainer.innerHTML = `<p class="empty-list">No favourites yet</p>`;
         }
@@ -39,4 +43,5 @@ window.addEventListener("DOMContentLoaded", () => {
       favContainer.appendChild(div);
     });
   }
+
 });

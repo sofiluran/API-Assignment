@@ -56,6 +56,34 @@ body {
   text-underline-offset: 10px;
 }
 
+.watchlist-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.watchlist-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.watchlist-counter {
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: -8px;
+  right: -14px;
+  font-size: 0.8rem;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: crimson;
+  font-weight: bold;
+  background-color: #424041;
+}
+
 .hero-image {
   height: auto;
   width: 100%;
@@ -131,8 +159,9 @@ body {
     flex-direction: column;
   }
 
-  .header-title {
-    display: none;
+  .watchlist-counter {
+    top: -3px;
+    right: -3px;
   }
 
   .menu-item {

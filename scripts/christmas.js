@@ -144,7 +144,7 @@ const addToWatchlist = (movie) => {
 
   fav.push(favMovie);
   saveToWatchlist(fav);
-  alert("Added to the Watchlist!");
+  window.updateWatchlistCounter();
 }
 
 const watchlistBtn = document.querySelector("#favouriteBtn");
@@ -165,6 +165,5 @@ const removeFromWatchlist = (movieId) => {
   const fav = getWatchlist();
   const updateFav = fav.filter(m => m.id !== movieId);
   saveToWatchlist(updateFav);
-  alert("Removed from Watchlist");
-
+  window.updateWatchlistCounter();
 }
