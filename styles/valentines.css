@@ -104,10 +104,6 @@ body {
   color: var(--color-primary);
 }
 
-/* .read-more {
-  grid-column: 2 / span 4;
-} */
-
 #button-random {
   background-color: var(--background-tertiary);
   font-family: 'Cormorant Upright';
