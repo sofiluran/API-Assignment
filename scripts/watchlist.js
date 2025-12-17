@@ -33,7 +33,7 @@ window.addEventListener("DOMContentLoaded", () => {
           alert("Removed from favourites!");
         }
         if (document.querySelectorAll(".favourites .fav").length === 0) {
-          favContainer.innerHTML = `<p class="empty">No favourites yet.</p>`;
+          favContainer.innerHTML = `<p class="empty-list">No favourites yet</p>`;
         }
       });
       favContainer.appendChild(div);

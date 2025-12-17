@@ -4,7 +4,7 @@ body {
   font-family: "HennyPenny", Arial, Helvetica, sans-serif;
 }
 
-.menu {
+.menu, .header {
   background-color: #5d0249;
 
   a {

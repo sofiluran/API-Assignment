@@ -9,8 +9,7 @@
   color: #fff;
 }
 
-.menu-item,
-.header-title {
+.menu-item {
   color: #fff;
 }
 
@@ -101,6 +100,10 @@
   ;
   height: 100%;
   width: 80%;
+}
+
+.movie-title {
+  font-size: 2.5rem;
 }
 
 .movie-image-container {
@@ -231,8 +234,10 @@
 
   .read-more {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 10px;
   }
 
   .button-random {
@@ -245,5 +250,9 @@
 
   .read-more a {
     width: 80%;
+  }
+
+  #favouriteBtn, .imdb-button {
+    width: 240px;
   }
 }

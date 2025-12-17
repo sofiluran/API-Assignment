@@ -10,11 +10,7 @@ body {
   font-family: 'Cormorant Upright';
 }
 
-.header-title {
-  color: var(--color-primary);
-}
-
-.menu {
+.menu, .header {
   background-color: var(--background-secondary);
   font-family: 'Cormorant Upright';
 
@@ -127,6 +123,10 @@ body {
 
   body {
     align-items: center;
+  }
+
+  .header {
+    width: 100%;
   }
 
   .hero-image {
