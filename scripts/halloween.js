@@ -121,11 +121,11 @@ const displayResult = (movie) => {
   watchlistBtn.addEventListener("click", () => {
   if (!currentMovie) return;
 
-  if (isOnWatchlist(currentMovie.id)) {
-    removeFromWatchlist(currentMovie.id);
+  if (isOnWatchlist(uniqueMovieId)) {
+    removeFromWatchlist(uniqueMovieId);
     watchlistBtn.textContent = "Add to Watchlist";
   } else {
-    addToWatchlist(currentMovie);
+    addToWatchlist(currentMovie, prefix);
     watchlistBtn.textContent = "Remove from Watchlist";
   }
 })}
