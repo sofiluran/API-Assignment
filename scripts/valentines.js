@@ -123,10 +123,9 @@ const displayResult = (movie) => {
       removeFromWatchlist(uniqueMovieId);
       watchlistBtn.textContent = "Add to Watchlist";
     } else {
-      addToWatchlist(currentMovie);
+      addToWatchlist(currentMovie, prefix);
       watchlistBtn.textContent = "Remove from Watchlist";
     }
-
   })
 }
 
@@ -142,7 +141,7 @@ const isOnWatchlist = (uniqueMovieId) => {
 
 const addToWatchlist = (movie, prefix) => {
   const uniqueMovieId = `${prefix}_${movie.id}`;
-  const fav = getWatchlist()
+  const fav = getWatchlist();
   if (fav.some(m => m.id === uniqueMovieId)) {
     return;
   }
