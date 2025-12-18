@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +11,8 @@
   <script src="./scripts/valentines.js" defer></script>
   <script src="./scripts/watchlist.js" defer></script>
   <script src="./scripts/watchlist_counter.js" defer></script>
+  <script src="./scripts/mobile_menu.js" defer></script>
 </head>
-
 <body>
   <header class="header">
     <div class="header-logo">
@@ -22,6 +21,9 @@
       </a>
     </div>
     <nav class="menu">
+      <button class="hamburger">
+        <span></span><span></span><span></span>
+      </button>
       <a href="index.html" class="menu-item">HOME</a>
       <a href="christmas.html" class="menu-item">CHRISTMAS</a>
       <a href="halloween.html" class="menu-item">HALLOWEEN</a>
@@ -34,12 +36,10 @@
       </div>
     </nav>
   </header>
-
   <div class="hero-image-container">
-    <img class="hero-image" src="./images/the-origins-of-valentines-day-blog.png" alt="logo" height="150px"
+    <img class="hero-image" src="./images/valentines.png" alt="logo" height="150px"
       width="250px">
   </div>
-
   <div class="valentines-introduction">
     <h1 class="valentines-introduction-title">Top 50 Valentines Day Movies You Can&apos;t Miss</h1>
     <p class="valentines-introduction-content">Valentine’s Day is just around the corner, and what better way to get
@@ -49,17 +49,12 @@
       special, there’s something here for everyone. Grab some chocolates, snuggle up under a blanket, and let our
       selection bring love, laughter, and a little movie magic to your Valentine’s celebration.</p>
   </div>
-
   <div class="user-input">
     <button id="button-random">What Should I Watch?</button>
     <p class="user-input-title">OR</p>
     <input id="search-input" placeholder="Search if a movie is on our Top 50 list..." />
   </div>
-
-  <main class="main">
-  </main>
-
+  <main class="main"></main>
   <footer class="footer">&copy;Group CSS</footer>
 </body>
-
 </html>

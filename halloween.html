@@ -12,6 +12,7 @@
   <script src="./scripts/halloween.js" defer></script>
   <script src="./scripts/watchlist.js" defer></script>
   <script src="./scripts/watchlist_counter.js" defer></script>
+  <script src="./scripts/mobile_menu.js" defer></script>
 </head>
 <body>
   <header class="header">
@@ -21,6 +22,9 @@
       </a>
     </div>
     <nav class="menu">
+      <button class="hamburger">
+        <span></span><span></span><span></span>
+      </button>
       <a href="index.html" class="menu-item">HOME</a>
       <a href="christmas.html" class="menu-item">CHRISTMAS</a>
       <a href="halloween.html" class="menu-item active">HALLOWEEN</a>
@@ -34,7 +38,7 @@
     </nav>
   </header>
   <div class="hero-image-container">
-    <img class="hero-image" src="./images/halloween..jpg" alt="logo" height="150px" width="250px">
+    <img class="hero-image" src="./images/halloween.jpg" alt="logo" height="150px" width="250px">
   </div>
   <div class="halloween-intro">
     <h1 class="halloween-intro-title">Top 50 Halloween Movies You Can&apos;t Miss</h1>
@@ -46,7 +50,7 @@
   </div>
   <div class="user-input">
     <button id="button-random">What should I watch?</button>
-    <h3 class="user-input-title">OR</h3>
+    <p class="user-input-title">OR</p>
     <input id="search-input" placeholder="Search if a movie is in our Top 50 list...">
   </div>
   <div class="result"></div>

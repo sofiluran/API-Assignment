@@ -26,6 +26,14 @@ body {
   text-underline-offset: 10px;
 }
 
+.watchlist-counter {
+  background-color: #F57783;
+}
+
+.hamburger span {
+  background-color: #F57783;
+}
+
 .hero-image {
   height: 471px;
   object-fit: cover;
@@ -44,10 +52,6 @@ body {
   font-size: 1.5rem;
 }
 
-.user-input {
-  background-color: var(--background-secondary);
-}
-
 .user-input-title {
   color: var(--background-tertiary);
   font-weight: bold;
@@ -56,7 +60,10 @@ body {
 #search-input {
   border: solid var(--background-tertiary);
   font-family: 'Cormorant Upright';
-  width: 80%;
+  flex-grow: 1;
+  padding: 15px 40px;
+  font-size: 1rem;
+  border-radius: 25px;
 }
 
 .main {
@@ -135,9 +142,12 @@ body {
   color: #ff798a;
 }
 
+.result {
+  flex-grow: 1;
+}
+
 .footer {
   background-color: var(--background-secondary);
-  border-top: solid var(--background-primary);
 }
 
 @media screen and (min-width: 340px) and (max-width: 1024px) {

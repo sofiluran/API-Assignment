@@ -21,6 +21,14 @@ body {
   font-family: "HennyPenny", Arial, Helvetica, sans-serif;
 }
 
+.watchlist-counter {
+  background-color: #ff8500;
+}
+
+.hamburger span {
+  background-color: #ff8500;
+}
+
 .halloween-intro {
   color: #ff8500;
   font-family: "HennyPenny";
@@ -38,9 +46,6 @@ body {
 
 .user-input {
   background-color: #5d0249;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 40px;
 }
 
 .user-input-title {
@@ -49,10 +54,15 @@ body {
 
 #button-random {
   background-color: #ff9020;
+  height: fit-content;
 }
 
 #search-input {
   border: solid #ff9020;
+  flex-grow: 1;
+  padding: 15px 40px;
+  font-size: 1rem;
+  border-radius: 25px;
 }
 
 .movie {
@@ -125,11 +135,10 @@ body {
   font-size: x-large;
   padding: 0 40px;
   text-align: center;
+  flex-grow: 1;
 }
 
-
 @media (min-width: 340px) and (max-width: 1024px) {
-
   .body {
     align-items: center;
   }
@@ -174,6 +183,4 @@ body {
   #favouriteBtn {
     margin: 0 0 20px 0;
   }
-
-
 }

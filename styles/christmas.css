@@ -13,11 +13,12 @@
   color: #fff;
 }
 
-.user-input {
-  padding-top: 35px;
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
+.hamburger span {
+  background-color: #f95856;
+}
+
+.watchlist-counter {
+  background-color: #fbd6d6;
 }
 
 .user-input-text {
@@ -52,7 +53,6 @@
 .search-input {
   flex-grow: 1;
   border: solid #f95856;
-  width: 80%;
   padding: 15px 40px;
   font-size: 1rem;
   border-radius: 25px;
@@ -63,6 +63,7 @@
 }
 
 .main-content.active {
+  margin-top: 35px;
   padding: 35px 0;
   align-items: center;
   display: flex;
@@ -96,8 +97,7 @@
     "image image movie-title movie-title movie-title movie-title"
     "image image year rating runtime mpa"
     "image image description description description description"
-    "image image button button button button"
-  ;
+    "image image button button button button";
   height: 100%;
   width: 80%;
 }
@@ -192,7 +192,6 @@
   padding: 30px;
 }
 
-
 @media (min-width: 340px) and (max-width: 1024px) {
 
   .main-content.active {
@@ -207,13 +206,6 @@
   .movie-image-container img {
     max-height: 400px;
     width: auto;
-  }
-
-  .user-input {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
   }
 
   .user-input-text {
@@ -232,6 +224,13 @@
     text-align: center;
   }
 
+  .user-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   .read-more {
     display: flex;
     flex-direction: column;
@@ -248,11 +247,7 @@
     width: 100%;
   }
 
-  .read-more a {
-    width: 80%;
-  }
-
-  #favouriteBtn, .imdb-button {
+  .read-more a, #favouriteBtn{
     width: 240px;
   }
 }

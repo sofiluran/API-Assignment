@@ -2,6 +2,7 @@ const valentinesUrl = "https://valentines-api.vercel.app/movies"
 const searchInput = document.getElementById("search-input")
 const result = document.querySelector(".main")
 const randomButton = document.getElementById("button-random")
+let valentinesMovies = []
 let remainingMovies = []
 let currentMovie = null;
 
@@ -9,7 +10,8 @@ const initializeMovies = async () => {
   try {
     const response = await fetch(valentinesUrl)
     if (!response.ok) throw new Error("Could not fetch API")
-    remainingMovies = await response.json()
+    valentinesMovies = await response.json()
+    remainingMovies = Array.from(valentinesMovies)
   } catch (error) {
     result.textContent = error.message;
   }
@@ -17,8 +19,8 @@ const initializeMovies = async () => {
 
 const callValentinesMovie = () => {
   if (remainingMovies.length === 0) {
-    result.textContent = "There are no more movies in the Top 50 list!"
-    randomButton.disabled = true
+    result.textContent = "You have gone through all the movies on our list."
+    remainingMovies = Array.from(valentinesMovies)
     return
   }
 
@@ -35,10 +37,7 @@ randomButton.addEventListener("click", callValentinesMovie)
 const searchMovie = async () => {
   const searchValue = searchInput.value.trim().toLowerCase()
 
-  if (!searchValue) {
-    result.innerHTML = "NOTHING HERE"
-    return
-  }
+  if (!searchValue) return
 
   try {
     const response = await fetch(valentinesUrl)
@@ -68,7 +67,6 @@ searchInput.addEventListener("input", () => {
 const displayResult = (movie) => {
   currentMovie = movie
   result.innerHTML = ""
-
   const title = movie.title
   const year = movie.release_year
   const poster = movie.poster;
