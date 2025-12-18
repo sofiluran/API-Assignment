@@ -56,6 +56,20 @@ body {
   text-underline-offset: 10px;
 }
 
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 4px;
+  background-color: white;
+  margin: 5px 0;
+}
+
 .watchlist-link {
   position: relative;
   display: inline-flex;
@@ -114,7 +128,12 @@ body {
 }
 
 .user-input {
-  padding: 15px;
+  background-color: var(--background-secondary);
+  padding-top: 35px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 10px;
 }
 
 .user-input-title {
@@ -155,8 +174,9 @@ body {
 
 @media (min-width: 340px) and (max-width: 1024px) {
   .menu {
-    display: flex;
-    flex-direction: column;
+    position: relative;
+    flex-wrap: wrap;
+    align-items: center;
   }
 
   .watchlist-counter {
@@ -171,5 +191,25 @@ body {
   .homepage-content {
     width: 90%;
     opacity: 0.9;
+  }
+
+  .menu .watchlist-container, .menu .hamburger {
+    flex: 0 0  auto;
+  }
+
+  .hamburger {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .menu > a {
+    display: none;
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+  }
+
+  .menu.active > a {
+    display: block;
   }
 }

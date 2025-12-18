@@ -16,7 +16,6 @@ let christmasMovies = [];
 let remainingMovies = []; 
 let currentMovie = null;
 
-
 const callChristmasApi = () => {
   fetch(christmasApiUrl).then((response) => {
     if (!response.ok) {
@@ -26,7 +25,6 @@ const callChristmasApi = () => {
   }).then((data) => {
     christmasMovies = data;
     remainingMovies = Array.from(christmasMovies);
-    console.log(data)
   }).catch((error) => {
     console.error("Error fetching API", error)
   })

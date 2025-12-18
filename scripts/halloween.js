@@ -2,15 +2,16 @@ const halloweenApi = "https://halloween-api.vercel.app/movies"
 const searchInput = document.getElementById("search-input")
 const result = document.querySelector(".result")
 const randomButton = document.getElementById("button-random")
+let halloweenMovies =[]
 let remainingMovies = []
 let currentMovie = null;
-
 
 const initializeMovies = async () => {
   try {
     const response = await fetch(halloweenApi)
     if (!response.ok) throw new Error("Could not fetch API")
-    remainingMovies = await response.json()
+    halloweenMovies = await response.json()
+    remainingMovies = Array.from(halloweenMovies)
   } catch (error) {
     result.textContent = error.message;
   }
@@ -18,16 +19,13 @@ const initializeMovies = async () => {
 
 const callHalloweenMovie = () => {
   if (remainingMovies.length === 0) {
-    result.textContent = "There are no more movies in the Top 50 list!"
-    randomButton.disabled = true
+    result.textContent = "You have gone through all the movies on our list."
+    remainingMovies = Array.from(halloweenMovies)
     return
   }
-
   const randomIndex = Math.floor(Math.random() * remainingMovies.length)
   const randomMovie = remainingMovies[randomIndex]
-
   remainingMovies.splice(randomIndex, 1)
-
   displayResult(randomMovie)
 }
 
@@ -36,10 +34,7 @@ randomButton.addEventListener("click", callHalloweenMovie)
 const searchMovie = async () => {
   const searchValue = searchInput.value.trim().toLowerCase()
 
-  if (!searchValue) {
-    result.innerHTML = "NOTHING HERE"
-    return
-  }
+  if (!searchValue) return
 
   try {
     const response = await fetch(halloweenApi)
@@ -69,7 +64,6 @@ searchInput.addEventListener("input", () => {
 const displayResult = (movie) => {
   currentMovie = movie
   result.innerHTML = ""
-
   const title = movie.title
   const year = movie.release_year
   const poster = movie.poster
