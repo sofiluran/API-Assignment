@@ -18,7 +18,7 @@ We have created 3 seperate API's containing 50 movies each. One Christmas, one H
 
 ## Link to the GitHub repository 
 
-[GitHub Repository](https://sofiluran.github.io/API-Assignment/)
+[GitHub Repository](https://github.com/sofiluran/API-Assignment.git)
 
 ## Project structure 
 - `index.html` - Homepage <br>
