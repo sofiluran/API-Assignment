@@ -8,9 +8,9 @@ We have created 3 seperate API's containing 50 movies each. One Christmas, one H
 
 ## Link to APIs
 
-[Christmas](https://christmas-api.vercel.app/movies)
-[Valentines Day](https://valentines-api.vercel.app/movies)
-[Halloween](https://halloween-api.vercel.app/movies)
+- [Christmas](https://christmas-api.vercel.app/movies)
+- [Valentines Day](https://valentines-api.vercel.app/movies)
+- [Halloween](https://halloween-api.vercel.app/movies)
 
 ## Link to the deployed website 
 
@@ -21,25 +21,25 @@ We have created 3 seperate API's containing 50 movies each. One Christmas, one H
 [GitHub Repository](https://sofiluran.github.io/API-Assignment/)
 
 ## Project structure 
-`index.html` - Homepage <br>
-`christmas.html` - Christmas page<br>
-`halloween.html` - Halloween page <br>
-`valentines.html` - Valentine's Day page <br>
-`watchlist.html` - Valentine's Day page <br>
+- `index.html` - Homepage <br>
+- `christmas.html` - Christmas page<br>
+- `halloween.html` - Halloween page <br>
+- `valentines.html` - Valentine's Day page <br>
+- `watchlist.html` - Valentine's Day page <br>
 
-`christmas.js` - js file for the Christmas page <br>
-`halloween.js` - js file for the Halloween page <br>
-`mobile_menu.js` - js file for the functionality of a mobile menu <br>
-`valentines.js` - js file for the Valentines page <br>
-`watchlist_counter.js` - js file for the functionality of a watchlist counter <br>
-`watchlist.js` - js file for the functionality of a watchlist page <br>
+- `christmas.js` - js file for the Christmas page <br>
+- `halloween.js` - js file for the Halloween page <br>
+- `mobile_menu.js` - js file for the functionality of a mobile menu <br>
+- `valentines.js` - js file for the Valentines page <br>
+- `watchlist_counter.js` - js file for the functionality of a watchlist counter <br>
+- `watchlist.js` - js file for the functionality of a watchlist page <br>
 
-`christmas.css` - file with styling that is common across the whole website.
-`global.css` - files with styling and different fonts on the pages to contribute to the different holiday layouts.
-`halloween.css` - file with styling for the Halloween page.
-`typography.css` - file for used fonts on the pages.
-`valentines.css` - file with styling for the Valentines page.
-`watchlist.css` - file with styling for the Watchlist page.
+- `christmas.css` - file with styling that is common across the whole website.
+- `global.css` - files with styling and different fonts on the pages to contribute to the different holiday layouts.
+- `halloween.css` - file with styling for the Halloween page.
+- `typography.css` - file for used fonts on the pages.
+- `valentines.css` - file with styling for the Valentines page.
+- `watchlist.css` - file with styling for the Watchlist page.
 
 ## Team members 
 
