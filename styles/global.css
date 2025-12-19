@@ -197,15 +197,19 @@ body {
     flex: 0 0  auto;
   }
 
+  .menu {
+    display: flex;
+    justify-content: flex-end;
+  }
+
   .hamburger {
     display: block;
-    margin: 0 auto;
   }
 
   .menu > a {
     display: none;
     width: 100%;
-    text-align: center;
+    text-align: right;
     padding: 12px 0;
   }
 
